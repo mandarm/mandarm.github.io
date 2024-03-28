@@ -1,0 +1,46 @@
+C pretty printer -- takes a C program and "prettifies" it, i.e. re-
+  writes it with proper indentation, etc.
+2 students
+
+C preprocessor -- takes a C file and handles the preprocessing commands 
+  (#include, #define, etc.) and generates a "pure" C file
+3 students
+
+Lex -- your own (simplified) version of the lexical analyzer generator
+4 students
+
+LL(1) parser generator -- takes a grammar and builds an LL(1) parser
+  program
+2-3 students
+
+LR(1) parser generator -- as above, for LR(1) grammars = your own
+  simplified version of yacc
+4 students
+
+latex2html/html2latex -- takes a LaTeX (typesetting language for 
+  formatting text) input file, and generates an "equivalent" html 
+  file, and vice-versa
+3-4 students
+
+html2text - takes an HTML page, and generates a properly formatted
+plain text version of the same
+2 students
+
+Static checker for C -- takes a C program and performs static checks
+  on it (e.g. syntactic errors, reports type mismatches, whether a
+  variable is being used without initialization/declaration, etc.)
+3-4 students
+
+Software simulator for 8086 or 8088 CPU -- "virtual machine" for the
+  8086/8088 instruction set (program will take a program in machine
+  language, create an "address space" for the program and then run it
+  in that address space)
+
+Syntax directed editor for C
+2-3 students
+
+GUI/WYSIWYG front end for LaTeX
+
+Markup languages for chemical equations/mathematical equations -- you
+have to design the language, write a parser/validator, and write a
+renderer (using Java / GTK / Motif / XSLT+Browser etc.)

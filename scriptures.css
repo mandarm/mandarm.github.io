@@ -1,0 +1,24 @@
+body {
+	background-color: #FFFFFF;
+	font-family: sans-serif;
+}
+
+h2 {
+	font-size: 120%; 
+	background-color: #75BEDF;
+	padding: 0.15em;
+}
+
+h3 {
+	font-size: 100%; 
+        font-style: normal;
+        font-weight: extra-light;
+	background-color: #75BEDF;
+	padding: 0.15em;
+}
+
+td {
+	font-family: arial,helvetica,sans-serif;
+	vertical-align: top;
+	padding: 10;
+}

@@ -1,0 +1,46 @@
+Homework problems for Operating Systems:
+
+---------------------------------------------------------------------------
+
+1. Processes: Implement a basic shell. Your program should run in an infinite 
+loop in which it prints a command prompt, accepts a command, executes the 
+command, and prints the prompt for the next command.
+
+Basic requirements: Your program should handle:
+(i) running jobs in the foreground and background (see the man page for the 
+    wait system call ("$ man 2 wait" on Linux) for details)
+(ii) simple input/output redirection (>, <, |)
+(iii) inbuilt commands cd, logout, exit
+
+Extra credit: 
+(i) keeping track of a PATH variable, so that programs can be run without
+    specifying the complete path
+(ii) simple shell variables and variable substitution
+(iii) command-line editing and history
+
+---------------------------------------------------------------------------
+
+2. Process synchronization: Write a program(s) to implement reader and writer 
+processes which synchronize their operation using semaphores. (Use semget(), 
+semop(), etc.). Include suitable printf statements so that when the program is
+running, it is easy to understand what the readers and writers are doing.
+
+Extra credit: keep track of various statistics such as queue lengths, waiting 
+times, etc.
+
+---------------------------------------------------------------------------
+
+There will probably be a third question on file systems which I will announce 
+within 7-10 days. 
+
+Total marks for the assignment (all 3 problems): 20% of your final score.
+
+Please start working on these problems NOW. You have to submit ALL your 
+programs no later than 2 days after the end of your end-semester examinations.
+This is a hard deadline, since I will have to submit your marks to the Dean's 
+office at that time.
+
+NOTE: Asking classmates for help in understanding the problem and designing 
+the program is acceptable, but please write your program on your own. If a
+set of programs look similar to me, I will probably penalize all students
+involved.

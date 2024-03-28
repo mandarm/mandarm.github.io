@@ -1,0 +1,54 @@
+<style type="text/css" media="screen">
+* { box-sizing: border-box; }
+
+a { font-family: arial, helvetica, sans-serif; font-size: 12pt; }
+a.large { font-family: arial, helvetica, sans-serif; font-size: 16pt; }
+body { font-family: arial, helvetica, sans-serif; font-size: 12pt; }
+div.h4 { font-size: 12pt; font-weight: normal; }
+h1.center { font-size: 16pt; font-weight: bold; text-align: center; }
+h1.left { font-size: 16pt; font-weight: bold; text-align: left; }
+h1.bg { background-color: #0E6655; color: #FFFFFF;
+   padding-bottom: +1%; padding-top: +1%; 
+   padding-left: 4pt;
+}
+h2 { font-size: 15pt; font-weight: bold;
+   background-color: #17A388; color: #FFFFFF;
+   margin-top: +2%; /*    margin-bottom: -1%; */
+   padding-left: 4pt;
+}
+h3 { font-size: 13pt; font-weight: bold; font-style: italic}
+h4 { font-size: 12pt; text-decoration: underline; font-weight: normal; 
+   margin-bottom: 8pt;
+}
+
+/* Doesn't seem to have any effect in compilers/presentation-topics.html */
+h5 { margin-bottom: 0pt; margin-top: 36pt; }
+p.compact { margin-top: 0pt; margin-bottom: 0pt; }
+
+/* p.slides { margin-top: -1%; } */
+table.slides { margin-top: 0%; width: 80%; }
+table.slides td { padding-bottom: 6pt; padding-top: 4pt; vertical-align: top; 
+   font-size: 12pt;
+}
+
+li.level1 { padding: 2pt 0pt; }
+
+li.level2 { padding: 0pt 0pt; }
+
+/* copied from Sourav Sengupta */
+#one-column-emphasis {
+    width: 100%;
+    text-align: left;
+    border-collapse: collapse;
+}
+
+.oce-first {
+    background: #f2f1eb;
+    border-right: 10px solid transparent;
+    border-left: 10px solid transparent;
+}
+
+</style>
+<!-- modified timestamp start -->
+<hr/><p>Last modified: Thu Apr 13 16:01:14 IST 2023</p>
+<!-- modified timestamp end -->

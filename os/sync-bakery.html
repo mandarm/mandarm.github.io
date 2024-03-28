@@ -1,0 +1,127 @@
+<HTML>
+<HEAD>
+<TITLE>ECS 150 Spring 1999: Bakery Algorithm</TITLE>
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+<H1>Bakery Algorithm</H1>
+<P>
+<H2>Introduction</H2>
+<P>
+This algorithm solves the critical section problem for <i>n</i> processes in
+software.  The basic idea is that of a bakery; customers take numbers, and
+whoever has the lowest number gets service next.  Here, of course, "service"
+means entry to the critical section.<p>
+<H2>Algorithm</H2>
+<PRE>
+ 1 var choosing: shared array[0..n-1] of boolean;
+ 2     number: shared array[0..n-1] of integer;
+          ...
+ 3 repeat
+ 4     choosing[i] := true;
+ 5     number[i] := max(number[0],number[1],...,number[n-1]) + 1;
+ 6     choosing[i] := false;
+ 7     for j := 0 to n-1 do begin
+ 8         while choosing[j] do (* nothing *);
+ 9         while number[j] &lt;&gt; 0 and
+10                    (number[j], j) &lt; (number[i],i) do
+11              (* nothing *);
+12    end;
+13    (* critical section *)
+14    number[i] := 0;
+15    (* remainder section *)
+16    until false;
+</pre>
+<H2>Comments</H2><P>
+<i>lines 1-2</i>:
+Here, <i>choosing</i>[<i>i</i>] is true if P<sub>i</sub> is choosing a
+number.  The number that P<sub>i</sub> will use to enter the critical section is in
+<i>number</i>[<i>i</i>]; it is 0 if P<sub>i</sub> is not trying to enter its
+critical section.<p>
+<i>lines 4-6</i>:
+These three lines first indicate that the process is choosing a
+number (line 4), then try to assign a unique number to the process P<sub>i</sub> (line 5);
+however, that does not always happen.  Afterwards, P<sub>i</sub> indicates it is done
+(line 6).<p>
+<i>lines 7-12</i>:	Now we select which process goes into the critical section.    Pi
+waits until it has the lowest number of all the processes waiting to enter the
+critical section. If two processes have the same number, the one with the
+smaller name - the value of the subscript - goes in; the notation  "(a,b) &lt;
+(c,d)" means true if a &lt; c or if both a = c and b &lt; d (lines 9-10).  Note
+that if a process is not trying to enter the critical section, its number is 0.
+Also, if a process is choosing a number when P<sub>i</sub> tries to look at it, P<sub>i</sub> waits
+until it has done so before looking (line 8).<p>
+<i>line 14</i>:	Now P<sub>i</sub> is no longer interested in entering its critical section, so it
+sets <i>number</i>[<i>i</i>] to 0.<p>
+<hr>
+<H1>Bogus Bakery Algorithm</H1><p>
+<H2>Introduction</H2><p>
+Why does Lamport's Bakery algorithm used a variable called
+<i>choosing</i> (see the algorithm, lines 1, 4, 6, and 8)?  It is very
+instructive to see what happens if you leave it out.  This gives an example of
+mutual exclusion being violated if you don't put <i>choosing</i> in.
+But first, the algorithm (with the lines involving <i>choosing</i>
+commented out) so you can see what the modification was:<p>
+<H2>Algorithm</H2><p>
+<pre>
+ 1 var (* choosing: shared array [0..n-1] of boolean; *)
+ 2     number: shared array [0..n-1] of integer;
+       ...
+ 3 repeat
+ 4     (* choosing[i] := true; *)
+ 5     number[i] := max(number[0],number[1],...,number[n-1]) + 1;
+ 6     (* choosing[i] := false; *)
+ 7     for j := 0 to n-1 do begin
+ 8         (* while choosing[j] do ; *)
+ 9         while number[j] &lt;&gt; 0 and 10 (number[j], j) &lt; (number[i],i) do
+11             (* nothing *);
+12     end;
+13     (* critical section *)
+14     number[i] := 0;
+15     (* remainder section *)
+16     until false;
+</pre>
+<H2>Proof of Violation of Mutual Exclusion</H2><p>
+Suppose we have two processes just beginning; call them p<sub>0</sub> and p<sub>1</sub>.  Both reach
+line 5 at the same time.  Now, we'll assume both read <i>number</i>[0]
+and <i>number</i>[1] before either addition takes place.  Let p<sub>0</sub>
+complete the line, assigning 1 to <i>number</i>[0], but p<sub>1</sub> block
+before the assignment.  Then p<sub>0</sub> gets through the <b>while</b> loop at
+lines 9-11 and enters the critical section.  It leaves, and attempts re-entry.
+It passes line 5, assigning 2 to <i>number</i>[0]; it then goes  into
+the critical section, as <i>number</i>[1] is 0.  Now p<sub>1</sub> resumes
+execution.  It completes the assignment in line 5; as it read number[0] and
+<i>number</i>[1] as 0, it assigns 1 to <i>number</i>[1].  It
+then reaches the <b>while</b> loop at lines 9-11, and as
+<i>number</i>[0] is 2, it will pass through the <b>while</b>
+loop and enter the critical section.  Now both p<sub>0</sub> and p<sub>1</sub> are in the critical
+section.<p>
+The reason for <i>choosing</i> is to prevent the <b>while
+</b>loop in lines 9-11 from being <i>entered</i> when process <i>j</i> is
+setting its <i>number</i>[<i>j</i>].  Note that if the loop is entered
+and <i>then</i> process <i>j</i> reaches line 5, one of two situations arises.
+Either <i>number</i>[<i>j</i>] has the value 0 when the first test is
+executed, in which case process <i>i</i> moves on to the next process, or
+<i>number</i>[<i>j</i>] has a non-zero value, in which case at some
+point <i>number</i>[<i>j</i>] will be greater than
+<i>number</i>[<i>i</i>] (since process <i>i</i> finished executing
+statement 5 before process <i>j</i> began).  Either way, process <i>i</i> will
+enter the critical section before process <i>j</i>, and when process <i>j</i>
+reaches the while loop, it will loop at least until process <i>i</i> leaves the
+critical section.<p>
+<P>
+<HR>
+<IMG SRC="Misc/seal.gif" ALIGN=left>
+<ADDRESS>
+Send email to
+<A HREF="mailto:cs150@csif.cs.ucdavis.edu">cs150@csif.cs.ucdavis.edu</A>.
+<p>
+Department of Computer Science
+<br>
+University of California at Davis
+<br>
+Davis, CA  95616-8562
+</ADDRESS>
+<br CLEAR=left><hr>
+<DATE>Page last modified on 4/22/99</DATE>
+</BODY>
+</HTML>
