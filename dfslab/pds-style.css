@@ -1,0 +1,443 @@
+/*-----------------------------------------------*/
+
+
+/* CSS stylesheet for Sourav Sen Gupta's website */
+
+
+/*-----------------------------------------------*/
+
+
+/*
+    Body BG     :    #ffffff
+    Body Text    :    #222222
+    Header BG     :    #770f0f
+    Header Text    :    #f2f1eb
+    Sub-H Text    :    #f2f1eb
+    Menu BG        :    #f2f1eb
+    Menu Text    :    #222222
+    Link Color     :    #770f0f
+    PubInfo Text:    #f2f1eb
+*/
+
+body {
+    margin: 0;
+    font: 14px/1.6 Roboto, Georgia, serif;
+    color: #222222;
+    background: #ffffff;
+}
+
+
+/*-----------------------------------------------*/
+
+#header {
+    clear: both;
+    height: 100px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    background: #770f0f;
+}
+
+#header-content {
+    margin: 0 auto;
+    padding: 0 20px;
+    width: 1000px;
+}
+
+#main-heading {
+    float: left;
+    height: 100px;
+    padding: 0 20px 0 0;
+    border-right: 2px solid #f2f1eb;
+    font: 300 64px Oswald, Georgia, serif;
+    color: #f2f1eb;
+}
+
+#sub-heading {
+    float: left;
+    height: 100px;
+    padding: 15px 0 0 10px;
+    font: 300 28px/1.2 Oswald, Georgia, serif;
+    color: #f2f1eb;
+}
+
+#header-logo {
+    float: right;
+    height: 100px;
+    width: 100px;
+    background: url(images/isi_logo.png) no-repeat right center;
+    background-size: 70px;
+}
+
+
+/*-----------------------------------------------*/
+
+#menu {
+    clear: both;
+    height: 40px;
+    width: 100%;
+    position: fixed;
+    top: 100px;
+    background: #f2f1eb;
+}
+
+#menu-content {
+    width: 1000px;
+    margin: 0 auto;
+    padding: 10px 20px 0 20px;
+}
+
+#left-menu {
+    float: left;
+    font: 18px/1.6 Roboto, Georgia, serif;
+}
+
+#left-menu ul {
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+#left-menu ul li {
+    float: left;
+    margin: 0 30px 0 0;
+}
+
+#left-menu ul li a {
+    display: block;
+    text-decoration: none;
+    border: none;
+    color: #222222;
+}
+
+#left-menu ul li a:hover {
+    color: #222222;
+    border-bottom: 2px solid #770f0f;
+}
+
+#right-menu {
+    float: right;
+    font: 14px/1.6 Roboto, Georgia, serif;
+}
+
+#right-menu ul {
+    float: right;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+#right-menu ul li {
+    float: left;
+    margin: 6px 0 0 30px;
+}
+
+#right-menu ul li a {
+    display: block;
+    text-decoration: none;
+    border: none;
+    color: #222222;
+}
+
+#right-menu ul li a:hover {
+    color: #222222;
+    border-bottom: 2px solid #770f0f;
+}
+
+#menugap {
+    clear: both;
+    height: 20px;
+    width: 100%;
+    position: fixed;
+    top: 140px;
+    background: #ffffff;
+}
+
+
+/*-----------------------------------------------*/
+
+#container {
+    clear: both;
+    margin: 120px auto 0 auto;
+}
+
+#main-photo-frame {
+    clear: both;
+    width: 1000px;
+    margin: 0 auto;
+}
+
+#content {
+    clear: both;
+    width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+
+/*-----------------------------------------------*/
+
+#footer {
+    clear: both;
+    margin: 20px auto 0 auto;
+    width: 100%;
+    min-height: 50px;
+    background: #770f0f;
+    color: #ffffff;
+}
+
+#footer-content {
+    width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+
+/*-----------------------------------------------*/
+
+#left-column {
+    float: left;
+    width: 300px;
+    margin: 0;
+    padding: 0;
+}
+
+#mid-column {
+    float: left;
+    width: 300px;
+    margin: 0 0 0 50px;
+    padding: 0;
+}
+
+#right-column {
+    float: left;
+    width: 300px;
+    margin: 0 0 0 50px;
+    padding: 0;
+}
+
+#left-mid-column {
+    float: left;
+    width: 650px;
+    margin: 0;
+    padding: 0;
+}
+
+
+/*-----------------------------------------------*/
+
+.pubinfo {
+    font: 12px/1.6 Roboto, Georgia, serif;
+    color: #998877;
+}
+
+img.right-photo-frame {
+    width: 300px;
+    clip: rect(0px, 60px, 200px, 0px);
+}
+
+.clear {
+    clear: both;
+}
+
+.drawer {
+    clear: both;
+    padding: 10px;
+    background: #f2f1eb;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+}
+
+
+/*-----------------------------------------------*/
+
+ul {
+    padding: 0px 0 5px 0;
+    margin: 0;
+    list-style: none;
+}
+
+.pos li {
+    padding-left: 25px;
+    background: url(images/office.png) no-repeat;
+    background-position: left center;
+}
+
+.deg li {
+    padding-left: 25px;
+    background: url(images/degree.png) no-repeat;
+    background-position: left center;
+}
+
+.lin li {
+    padding-left: 25px;
+    background: url(images/link.jpg) no-repeat;
+    background-position: left center;
+}
+
+.pub li {
+    margin-bottom: 10px;
+    padding-left: 25px;
+    background: url(images/paper.png) no-repeat;
+    background-position: left top;
+}
+
+.syn li {
+    margin-bottom: 10px;
+    padding-left: 25px;
+    background: url(images/synergy.png) no-repeat;
+    background-position: left top;
+}
+
+.mem li {
+    padding-left: 25px;
+    background: url(images/member.png) no-repeat;
+    background-position: left top;
+}
+
+.new li {
+    padding-left: 25px;
+    background: url(images/new.png) no-repeat;
+    background-position: left top;
+}
+
+.old li {
+    padding-left: 25px;
+    background: url(images/old.png) no-repeat;
+    background-position: left center;
+}
+
+.syl li {
+    margin-bottom: 10px;
+    padding-left: 25px;
+    background: url(images/syllabus.png) no-repeat;
+    background-position: left center;
+}
+
+.cou li {
+    margin-bottom: 10px;
+    padding-left: 25px;
+    background: url(images/course.png) no-repeat;
+    background-position: left center;
+}
+
+.B ol {
+   counter-reset: chapter 1; list-style: none; 
+}
+
+.B ol li+li {
+   counter-increment: chapter 1; list-style: none;
+}
+
+.B ol li:before {
+   content: "(B" counter(chapter) ")";
+}
+
+/*-----------------------------------------------*/
+
+a {
+    color: #770f0f;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #770f0f;
+    text-decoration: none;
+    border-bottom: 1px solid #770f0f;
+}
+
+a:visited {
+    color: #770f0f;
+    text-decoration: none;
+}
+
+a.anchor {
+    position: relative;
+    top: -170px;
+    visibility: hidden;
+}
+
+a.download {
+    background: url(images/download.png) no-repeat left top;
+    margin-right: 5px;
+    padding-left: 16px;
+    font: 12px/1.6 Raleway, Georgia, serif;
+    text-decoration: none;
+}
+
+a.download:hover {
+    border: 0;
+}
+
+
+/*-----------------------------------------------*/
+
+h1 {
+    margin-top: 50px;
+    color: #770f0f;
+}
+
+h2 {
+    margin-top: 50px;
+}
+
+hr.divider {
+    border: 0;
+    border-bottom: 1px dashed #770f0f;
+    background: #ffffff;
+}
+
+p {
+    padding-bottom: 10px;
+}
+
+strong {
+    border: 1px dotted #666666;
+    border-radius: 3px;
+    background-color: #ffffdd;
+    padding: 2px 5px;
+}
+
+pre {
+    font-size: 1.2em;
+    color: #dddddd;
+    border: 1px dotted #666666;
+    border-radius: 3px;
+    background-color: #262828;
+    padding: 2px 5px;
+}
+
+/*-----------------------------------------------*/
+
+#one-column-emphasis {
+    width: 100%;
+    text-align: left;
+    border-collapse: collapse;
+}
+
+#one-column-emphasis th {
+    font: 16px/1.6 Roboto, Georgia, serif;
+    padding: 12px 5px;
+    color: #903;
+}
+
+#one-column-emphasis td {
+    padding: 10px 5px;
+    border-top: 1px solid #dddddd;
+    vertical-align: top;
+}
+
+.oce-first {
+    background: #f2f1eb;
+    border-right: 10px solid transparent;
+    border-left: 10px solid transparent;
+}
+
+
+/*-----------------------------------------------*/
+<!-- modified timestamp start -->
+<hr/><p>Last modified: Thu Aug 11 17:28:29 IST 2022</p>
+<!-- modified timestamp end -->
