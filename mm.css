@@ -31,6 +31,8 @@ table.slides td { padding-bottom: 6pt; padding-top: 4pt; vertical-align: top;
    font-size: 12pt;
 }
 
+ul.biggaps li {padding: 4pt 0pt; }
+
 li.level1 { padding: 2pt 0pt; }
 
 li.level2 { padding: 0pt 0pt; }
@@ -49,6 +51,3 @@ li.level2 { padding: 0pt 0pt; }
 }
 
 </style>
-<!-- modified timestamp start -->
-<hr/><p>Last modified: Thu Apr 13 16:01:14 IST 2023</p>
-<!-- modified timestamp end -->
