@@ -1,6 +1,6 @@
 def hangman(word, guesses, lives):
-    remaining_letters = set([c for c in word])
-    current_status = ['_' for i in range(len(word))]
+    remaining_letters = set(word)
+    current_status = ['_' for x in word]
     for c in guesses:
         if c in remaining_letters:
             remaining_letters.remove(c)
