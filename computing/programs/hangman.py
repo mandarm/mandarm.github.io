@@ -11,7 +11,7 @@ def hangman(word, guesses, lives):
             lives -= 1
 
         print(''.join(current_status), '\t', c, 'guessed,', lives, 'lives remaining')
-        if len(remaining_letters) == 0:
+        if not remaining_letters: # OR len(remaining_letters) == 0 OR ''.join(current_status) == word
             print('Word correctly guessed')
             return
         elif lives == 0:
@@ -22,4 +22,5 @@ def hangman(word, guesses, lives):
 
 #hangman("lion", "euiaoblnxy", 6)
 hangman("gorgonzola", "aglmnxyzpqrs", 6)
+hangman("gorgonzola", "aglmnxyzopqrs", 6)
 hangman("gupibagha", "abcdefghi", 6)
